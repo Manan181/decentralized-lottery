@@ -1,4 +1,4 @@
-const { ethers } = require("hardhat")
+const { ethers } = require("hardhat");
 
 const networkConfig = {
     default: {
@@ -30,12 +30,13 @@ const networkConfig = {
         raffleEntranceFee: ethers.utils.parseEther("0.01"), // 0.01 ETH
         callbackGasLimit: "500000", // 500,000 gas
     },
-}
+};
 
-const developmentChains = ["hardhat", "localhost", "ganache"]
-const VERIFICATION_BLOCK_CONFIRMATIONS = 6
-const frontEndContractsFile = "../nextjs-smartcontract-lottery-fcc/constants/contractAddresses.json"
-const frontEndAbiFile = "../nextjs-smartcontract-lottery-fcc/constants/abi.json"
+const developmentChains = ["hardhat", "localhost", "ganache"];
+const VERIFICATION_BLOCK_CONFIRMATIONS = 6;
+const frontEndContractsFile =
+    "../nextjs-smartcontract-lottery-fcc/constants/contractAddresses.json";
+const frontEndAbiFile = "../nextjs-smartcontract-lottery-fcc/constants/abi.json";
 
 module.exports = {
     networkConfig,
@@ -43,4 +44,4 @@ module.exports = {
     VERIFICATION_BLOCK_CONFIRMATIONS,
     frontEndContractsFile,
     frontEndAbiFile,
-}
+};

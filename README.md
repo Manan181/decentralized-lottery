@@ -1,33 +1,6 @@
 # Hardhat Smartcontract Lottery (Raffle) FCC
 
-*This repo has been updated to work with Sepolia over Goerli.*
-
-This is a section of the Javascript Blockchain/Smart Contract FreeCodeCamp Course.
-
-*[⌨️ (13:41:02) Lesson 9: Hardhat Smart Contract Lottery](https://www.youtube.com/watch?v=gyMwXuJrbJQ&t=49262s)*
-
-[Full Repo](https://github.com/smartcontractkit/full-blockchain-solidity-course-js)
-
-- [Hardhat Smartcontract Lottery (Raffle) FCC](#hardhat-smartcontract-lottery-raffle-fcc)
-- [Getting Started](#getting-started)
-  - [Requirements](#requirements)
-  - [Quickstart](#quickstart)
-  - [Typescript](#typescript)
-- [Usage](#usage)
-  - [Testing](#testing)
-    - [Test Coverage](#test-coverage)
-- [Deployment to a testnet or mainnet](#deployment-to-a-testnet-or-mainnet)
-    - [Estimate gas cost in USD](#estimate-gas-cost-in-usd)
-  - [Verify on etherscan](#verify-on-etherscan)
-    - [Typescript differences](#typescript-differences)
-- [Linting](#linting)
-- [Thank you!](#thank-you)
-
-This project is apart of the Hardhat FreeCodeCamp video.
-
-Checkout the full blockchain course video [here.](https://www.youtube.com/watch?v=gyMwXuJrbJQ)
-
-# Getting Started
+*This repo has been updated to work with Sepolia*
 
 ## Requirements
 
@@ -40,23 +13,6 @@ Checkout the full blockchain course video [here.](https://www.youtube.com/watch?
   - You'll know you've installed yarn right if you can run:
     - `yarn --version` and get an output like: `x.x.x`
     - You might need to [install it with `npm`](https://classic.yarnpkg.com/lang/en/docs/install/) or `corepack`
-
-## Quickstart
-
-```
-git clone https://github.com/PatrickAlphaC/hardhat-smartcontract-lottery-fcc
-cd hardhat-smartcontract-lottery-fcc
-yarn
-```
-
-## Typescript
-
-If you want to get to typescript and you cloned the javascript version, just run:
-
-```
-git checkout typescript
-yarn 
-```
 
 # Usage
 
@@ -77,8 +33,6 @@ yarn hardhat test
 ```
 yarn hardhat coverage
 ```
-
-
 
 # Deployment to a testnet or mainnet
 
@@ -141,7 +95,6 @@ To get a USD estimation of gas cost, you'll need a `COINMARKETCAP_API_KEY` envir
 Then, uncomment the line `coinmarketcap: COINMARKETCAP_API_KEY,` in `hardhat.config.js` to get the USD estimation. Just note, everytime you run your tests it will use an API call, so it might make sense to have using coinmarketcap disabled until you need it. You can disable it by just commenting the line back out. 
 
 
-
 ## Verify on etherscan
 
 If you deploy to a testnet or mainnet, you can verify it if you get an [API Key](https://etherscan.io/myapikey) from Etherscan and set it as an environemnt variable named `ETHERSCAN_API_KEY`. You can pop it into your `.env` file as seen in the `.env.example`.
@@ -154,16 +107,6 @@ However, you can manual verify with:
 yarn hardhat verify --constructor-args arguments.js DEPLOYED_CONTRACT_ADDRESS
 ```
 
-### Typescript differences
-1. `.js` files are now `.ts`
-2. We added a bunch of typescript and typing packages to our `package.json`. They can be installed with:
-   1. `yarn add @typechain/ethers-v5 @typechain/hardhat @types/chai @types/node ts-node typechain typescript`
-3. The biggest one being [typechain](https://github.com/dethcrypto/TypeChain)
-   1. This gives your contracts static typing, meaning you'll always know exactly what functions a contract can call. 
-   2. This gives us `factories` that are specific to the contracts they are factories of. See the tests folder for a version of how this is implemented. 
-4. We use `imports` instead of `require`. Confusing to you? [Watch this video](https://www.youtube.com/watch?v=mK54Cn4ceac)
-5. Add `tsconfig.json`
-
 # Linting
 
 To check linting / code formatting:
@@ -174,31 +117,3 @@ or, to fix:
 ```
 yarn lint:fix
 ```
-
-# Thank you!
-
-If you appreciated this, feel free to follow me or donate!
-
-ETH/Polygon/Avalanche/etc Address: 0x9680201d9c93d65a3603d2088d125e955c73BD65
-
-[![Patrick Collins Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/PatrickAlphaC)
-[![Patrick Collins YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/channel/UCn-3f8tw_E1jZvhuHatROwA)
-[![Patrick Collins Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/patrickalphac/)
-[![Patrick Collins Medium](https://img.shields.io/badge/Medium-000000?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@patrick.collins_58673/)
-
-
-
-deploying "Raffle" (tx: 0x81d6e82399a30b48fdbeb48b78a040b60fc9937a6613e36ae8997e4099896f71)...: 
-deployed at 0xAD2678165AeA6D1766F06b9352014b6F71CF3069 with 1224148 gas
-Verifying...
-Verifying contract...
-Nothing to compile
-Successfully submitted source code for contract
-contracts/Raffle.sol:Raffle at 0xAD2678165AeA6D1766F06b9352014b6F71CF3069
-for verification on the block explorer. Waiting for verification result...
-
-Successfully verified contract Raffle on Etherscan.
-https://sepolia.etherscan.io/address/0xAD2678165AeA6D1766F06b9352014b6F71CF3069#code
-Enter lottery with command:
-yarn hardhat run scripts/enterRaffle.js --network sepolia
-----------------------------------------------------
